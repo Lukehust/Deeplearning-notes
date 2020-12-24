@@ -1,5 +1,4 @@
-\documentclass[UTF8,a4paper]{article}
-\usepackage{ctex}
+\documentclass[UTF8,a4paper]{ctexart}
 \usepackage{graphicx}
 \graphicspath{{image/}}
 \title{梯度下降}
@@ -62,7 +61,6 @@ L^n=\left(\hat{y}^n-\left(b+\sum w_i x_i^n\right)\right)^2 \qquad w^i=w^{i-1}-\e
 \centering
 \includegraphics[width=300pt]{stochasticGradientDescent.png}
 \caption{两种方法计算速度的对比}
-\label{stochastic}
 \end{figure}
 
 \section{Feature Scaling (归一化)}
@@ -75,7 +73,6 @@ L^n=\left(\hat{y}^n-\left(b+\sum w_i x_i^n\right)\right)^2 \qquad w^i=w^{i-1}-\e
 \centering
 \includegraphics[width=340pt]{featureScaling.png}
 \caption{参数的均值与方差对梯度下降算法的影响}
-\label{featureScaling}
 \end{figure}
 
 常见的归一化方法是对每组数据的同一维度下的坐标进行计算，算出均值与方差，再基于此归一化（如图3）：
@@ -84,7 +81,6 @@ L^n=\left(\hat{y}^n-\left(b+\sum w_i x_i^n\right)\right)^2 \qquad w^i=w^{i-1}-\e
 \centering
 \includegraphics[width=260pt]{scalingMethod.png}
 \caption{归一化方法}
-\label{scalingMethod}
 \end{figure}
 
 \newpage
@@ -95,7 +91,6 @@ L^n=\left(\hat{y}^n-\left(b+\sum w_i x_i^n\right)\right)^2 \qquad w^i=w^{i-1}-\e
 \centering
 \includegraphics[width=340pt]{limitation.png}
 \caption{梯度下降方法的局限性}
-\label{limitation}
 \end{figure}
 
 梯度下降方法可能会被困在极点、马鞍点，导致找不到最小点。或者在斜率很小的地方，由于算力限制，Loss下降得非常缓慢，也容易被困住。

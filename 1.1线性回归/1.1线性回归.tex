@@ -1,5 +1,4 @@
-\documentclass[UTF8,a4paper]{article}
-\usepackage{ctex}
+\documentclass[UTF8,a4paper]{ctexart}
 \usepackage{graphicx}
 \graphicspath{{image/}}
 \title{线性回归}
@@ -44,7 +43,6 @@ L(f)=L(w,b)=\sum^{10}_{n=1}(\hat{y}^n-(b+w\cdot x^{n}_{cp}))^2
 \centering
 \includegraphics[width=300pt]{bias-variance.png}
 \caption{bias和variance的示意图}
-\label{bias-variance}
 \end{figure}
 
 通过增加数据的方法可以解决variance过大的问题，而在没有更多数据的时候，可以用regularzation(正则化)的方法减小variance，但是可能会同时增大bias.实际操作中需要选择恰当的模型来平衡两种误差使得总误差最小。
@@ -57,7 +55,6 @@ L(f)=L(w,b)=\sum^{10}_{n=1}(\hat{y}^n-(b+w\cdot x^{n}_{cp}))^2
 \centering
 \includegraphics[width=300pt]{notdo.png}
 \caption{不要采用这种方法}
-\label{notdo}
 \end{figure}
 
 可以采用交叉验证(Cross Validation)的方法来避免这种情况，如图3将 training set 分为两部分，一部分作为 training set ，一部分作为 validation set ，通过验算 validation set 的 error 来决定选择哪个 model. 此时，不应再用 testing set 中的数据来返回验算其他 model ，这会将 testing set 变成一个新的 validation set ，从而影响模型的最终效果。
@@ -65,7 +62,6 @@ L(f)=L(w,b)=\sum^{10}_{n=1}(\hat{y}^n-(b+w\cdot x^{n}_{cp}))^2
 \centering
 \includegraphics[width=300pt]{rec1.png}
 \caption{可以采用这种方法}
-\label{recommended1}
 \end{figure}
 
 在实际操作中这种方法会遇到如何分开 training set 的问题，这时可以使用 N-fold Cross Validation 的方法来避免可能出现的小概率事件（图4）。将 training set 分为三部分，分别作为训练集和测试集得出 error ，取平均 error 最小的 model 用 testing set 验算。
@@ -75,7 +71,6 @@ L(f)=L(w,b)=\sum^{10}_{n=1}(\hat{y}^n-(b+w\cdot x^{n}_{cp}))^2
 \centering
 \includegraphics[width=300pt]{rec2.png}
 \caption{可以采用这种方法}
-\label{recommended2}
 \end{figure}
 
 \end{document}
